@@ -56,6 +56,57 @@ INSERT INTO dbd2gb03.tarifas
 VALUES(nextval('tarifas_codigo_seq'::regclass), 7, 710.58, 910, '2024-03-22', '2024-12-31');
 
 
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '45276133', 'UY', 'CI', 'Ignacio', 'Borreani');
+
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '52848962', 'UY', 'CI', 'Gabriel', 'Baru');
+
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '38948549', 'UY', 'CI', 'Agustin', 'Casanova');
+
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '10004230440', 'US', 'SSN', 'Joe', 'Biden');
+
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '20438549', 'UY', 'CI', 'Diego', 'Garcia');
+
+INSERT INTO dbd2gb03.personas
+(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
+VALUES(nextval('personas_id_pers_seq'::regclass), '82743823', 'UY', 'CI', 'Gabriel', 'Diaz');
+
+
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 1, '2024-06-16 17:45:32', 0);
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 2, '2023-05-13 20:15.21', 0);
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 3, '2023-12-30 11:11:11', 0);
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 4, '2024-02-29 12:43:12', 0);
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 5, '2024-01-31 23:59:59', 0);
+
+INSERT INTO dbd2gb03.cuentas
+(nro_cuenta, id_pers_titular, fecha_alta, saldo)
+VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 6, '2023-12-01 00:00:01', 0);
+
+
 INSERT INTO dbd2gb03.vehiculos
 (matricula, modelo, tipo_vehiculo, nro_chasis, nro_motor, id_tag, nro_cuenta)
 VALUES('SCD4534', 'Camaro', 1, 'Z9R2T7F8J6W1', 'H8T3F7I4E2Q5', 'AI393D5G53JI', 1);
@@ -90,29 +141,6 @@ VALUES('SCL9221', 'Renault Clio', 1, 'M4D8H2W6Y1N5', 'I2F5Y7T9X4P6', '', 2);
 
 
 
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '45276133', 'UY', 'CI', 'Ignacio', 'Borreani');
-
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '52848962', 'UY', 'CI', 'Gabriel', 'Baru');
-
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '38948549', 'UY', 'CI', 'Agustin', 'Casanova');
-
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '10004230440', 'US', 'SSN', 'Joe', 'Biden');
-
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '20438549', 'UY', 'CI', 'Diego', 'Garcia');
-
-INSERT INTO dbd2gb03.personas
-(id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '82743823', 'UY', 'CI', 'Gabriel', 'Diaz');
 
 
 INSERT INTO dbd2gb03.propietarios_vehiculos
@@ -150,29 +178,7 @@ VALUES(2, 'SCL9221');
 
 
 
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 1, '2024-06-16 17:45:32', 0);
 
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 2, '2023-05-13 20:15.21', 0);
-
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 3, '2023-12-30 11:11:11', 0);
-
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 4, '2024-02-29 12:43:12', 0);
-
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 5, '2024-01-31 23:59:59', 0);
-
-INSERT INTO dbd2gb03.cuentas
-(nro_cuenta, id_pers_titular, fecha_alta, saldo)
-VALUES(nextval('cuentas_nro_cuenta_seq'::regclass), 6, '2023-12-01 00:00:01', 0);
 
 
 INSERT INTO dbd2gb03.peajes
@@ -249,4 +255,3 @@ VALUES('RAB8935', 1, 1, '2023-11-11', '2025-11-11');
 INSERT INTO dbd2gb03.bonificaciones
 (matricula, id_peaje, id_bonificacion, fecha_desde, fecha_hasta)
 VALUES('AAM8465', 1, 2, '2023-12-12', '2025-12-12');
-
