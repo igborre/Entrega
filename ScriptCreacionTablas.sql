@@ -80,7 +80,7 @@ create table BONIFICACIONES(
 	id_bonificacion smallint references TIPOS_BONIFICACIONES(id_bonificacion),
 	fecha_desde date not null,
 	fecha_hasta date,
-	primary key (matricula, id_peaje, id_bonificacion, fecha_desde)
+	primary key (matricula, id_peaje, id_bonificacion, fecha_desde),
 	check (fecha_hasta is null or fecha_hasta > fecha_desde)
 );
 
@@ -95,5 +95,3 @@ create table PASADAS(
 	FOREIGN KEY (id_peaje, nro_cabina) REFERENCES CABINA_PEAJES(id_peaje, nro_cabina),
 	primary key (matricula, fecha_hora)
 );
-
-

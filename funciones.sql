@@ -14,7 +14,7 @@ DECLARE
     importe_temp NUMERIC(5,2);
     cabina_rfid BOOLEAN;
     numero_cuenta bigint;
-   
+   	id_peaje_bonificacion SMALLINT;
 begin
 	--Se busca la cuenta 
 	select c. nro_cuenta
@@ -29,8 +29,8 @@ begin
     WHERE v.matricula = NEW.matricula;
 
     -- Obtener porcentaje de bonificacion (si existe)
-    SELECT tb.porcentaje
-    INTO bonificacion_por
+    SELECT tb.porcentaje, b.id_peaje
+    INTO bonificacion_por, id_peaje_bonificacion
     FROM dbd2gb03.bonificaciones b JOIN dbd2gb03.tipos_bonificaciones tb ON b.id_bonificacion = tb.id_bonificacion
     WHERE b.matricula = NEW.matricula;
 
@@ -39,17 +39,17 @@ begin
     INTO cabina_rfid
     FROM cabina_peajes cp 
     WHERE NEW.id_peaje = cp.id_peaje AND NEW.nro_cabina = cp.nro_cabina;
-
+    
     -- Calcular importe y cod tarifa basado en tipo_vehiculo y rfid_id 
     SELECT 
         CASE WHEN rfid_id IS NOT NULL AND cabina_rfid THEN t.valor_telepeaje ELSE t.valor_estandar END, t.codigo
     INTO importe_temp, NEW.cod_tarifa
     FROM dbd2gb03.tarifas t
-    WHERE t.tipo_vehiculo = tipo_vehiculo
+    WHERE t.tipo_vehiculo = tipo_de_vehiculo
       AND NEW.fecha_hora BETWEEN t.fecha_desde AND t.fecha_hasta;
 
     -- Aplicar bonificacion si existe
-    IF bonificacion_por IS NOT NULL THEN
+    IF bonificacion_por IS NOT NULL AND NEW.id_peaje = id_peaje_bonificacion AND cabina_rfid THEN
         NEW.importe := importe_temp * (1 - bonificacion_por / 100.0);
     ELSE
         NEW.importe := importe_temp;
@@ -61,7 +61,7 @@ begin
     IF EXISTS (SELECT 1
     	FROM cuentas c
     	WHERE c.nro_cuenta = numero_cuenta
-    	AND c.saldo< NEW.importe) THEN 
+    	AND c.saldo < NEW.importe) THEN 
     	raise EXCEPTION 'Saldo insuficiente';
     END IF;
     
@@ -72,11 +72,6 @@ begin
     RETURN NEW;
 END;
 $function$;
-
-
-
-
-
 
 
 CREATE OR REPLACE FUNCTION cargar_saldo(saldo_add numeric(6,2), nro_cuenta_param bigint)
@@ -100,4 +95,12 @@ END;
 $$ LANGUAGE plpgsql;
 
 
-select dbd2gb03.cargar_saldo(1000.00,5);
+update cuentas 
+set saldo = 0;
+
+select dbd2gb03.cargar_saldo(9999.00,1);
+select dbd2gb03.cargar_saldo(9999.00,2);
+select dbd2gb03.cargar_saldo(9999.00,3);
+select dbd2gb03.cargar_saldo(9999.00,4);
+select dbd2gb03.cargar_saldo(9999.00,5);
+select dbd2gb03.cargar_saldo(9999.00,6);

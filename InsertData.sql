@@ -29,31 +29,31 @@ VALUES(nextval('tipo_vehiculos_tipo_seq'::regclass), 'Vehículos de carga tritre
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 1, 142.98, 185.00, '2023-08-15', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 1, 185.00, 142.98, '2023-08-15', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 2, 142.98, 185.00, '2023-08-15', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 2, 185.00, 142.98, '2023-08-15', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 3, 207.97, 265.00, '2023-12-31', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 3, 265.00, 207.97, '2023-12-31', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 4, 207.97, 265.00, '2023-12-31', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 4, 265.00, 207.97, '2023-12-31', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 5, 207.97, 265.00, '2023-12-31', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 5, 265.00, 207.97, '2023-12-31', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 6, 424.61, 545.00, '2024-03-22', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 6, 545.00, 424.61, '2024-03-22', '2024-12-31');
 
 INSERT INTO dbd2gb03.tarifas
 (codigo, tipo_vehiculo, valor_estandar, valor_telepeaje, fecha_desde, fecha_hasta)
-VALUES(nextval('tarifas_codigo_seq'::regclass), 7, 710.58, 910, '2024-03-22', '2024-12-31');
+VALUES(nextval('tarifas_codigo_seq'::regclass), 7, 910.00, 710.58, '2024-03-22', '2024-12-31');
 
 
 INSERT INTO dbd2gb03.personas
@@ -70,7 +70,7 @@ VALUES(nextval('personas_id_pers_seq'::regclass), '38948549', 'UY', 'CI', 'Agust
 
 INSERT INTO dbd2gb03.personas
 (id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
-VALUES(nextval('personas_id_pers_seq'::regclass), '10004230440', 'US', 'SSN', 'Joe', 'Biden');
+VALUES(nextval('personas_id_pers_seq'::regclass), '10004230440', 'AR', 'DNI', 'Joe', 'Biden');
 
 INSERT INTO dbd2gb03.personas
 (id_pers, nro_doc, codigo_pais, tipo_doc, nombre, apellido)
@@ -139,6 +139,11 @@ INSERT INTO dbd2gb03.vehiculos
 (matricula, modelo, tipo_vehiculo, nro_chasis, nro_motor, id_tag, nro_cuenta)
 VALUES('SCL9221', 'Renault Clio', 1, 'M4D8H2W6Y1N5', 'I2F5Y7T9X4P6', '', 2);
 
+-- Sin propietario, esta paga en efectivo
+INSERT INTO dbd2gb03.vehiculos
+(matricula, modelo, tipo_vehiculo, nro_chasis, nro_motor)
+VALUES('LAC1234', 'Nissan Central', 1, 'YG73GFU492F', 'F3HF485DG');
+
 
 
 
@@ -179,7 +184,13 @@ VALUES(2, 'SCL9221');
 
 
 
+INSERT INTO dbd2gb03.peajes
+(id_peaje, nombre, ruta, km, telefono, whatsapp)
+VALUES(nextval('peajes_id_peaje_seq'::regclass), 'Centenario', 'Ruta 5', 246.000, '4664 6412', '');
 
+INSERT INTO dbd2gb03.peajes
+(id_peaje, nombre, ruta, km, telefono, whatsapp)
+VALUES(nextval('peajes_id_peaje_seq'::regclass), 'Manuel Dias', 'Ruta 5', 423.000, '4360 2996', '');
 
 INSERT INTO dbd2gb03.peajes
 (id_peaje, nombre, ruta, km, telefono, whatsapp)

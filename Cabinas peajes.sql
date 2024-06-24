@@ -333,3 +333,51 @@ INSERT INTO dbd2gb03.cabina_peajes
 INSERT INTO dbd2gb03.cabina_peajes 
  (id_peaje, nro_cabina, tiene_rfid) 
  VALUES (14, 6, 'true');
+ 
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 1, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 2, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 3, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 4, 'false');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 5, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (15, 6, 'true');
+ 
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 1, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 2, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 3, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 4, 'false');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 5, 'true');
+
+INSERT INTO dbd2gb03.cabina_peajes 
+ (id_peaje, nro_cabina, tiene_rfid) 
+ VALUES (16, 6, 'true');
